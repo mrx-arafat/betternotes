@@ -1,22 +1,21 @@
 <?php
 /*
 Plugin Name: BetterNotes
-Description: A plugin for managing notes with custom REST API endpoints.
+Description: A simple plugin for managing notes.
 Version: 1.0
 Author: Easin Arafat
-Text Domain: better-notes
 */
 
 
 function betternotes_register_cpt()
 {
     $labels = [
-        'name' => esc_html__('BetterNotes', 'better-notes'),
-        'singular_name' => esc_html__('BetterNote', 'better-notes'),
-        'add_new' => esc_html__('Add New Note', 'better-notes'),
-        'add_new_item' => esc_html__('Add New Note', 'better-notes'),
-        'menu_name' => esc_html__('BetterNotes', 'better-notes'),
-        'name_admin_bar' => esc_html__('BetterNotes', 'better-notes'),
+        'name' => 'BetterNotes',
+        'singular_name' => 'BetterNote',
+        'add_new' => 'Add New Note',
+        'add_new_item' => 'Add New Note',
+        'menu_name' => 'BetterNotes',
+        'name_admin_bar' => 'BetterNotes',
     ];
 
     $args = [
@@ -25,15 +24,13 @@ function betternotes_register_cpt()
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-welcome-write-blog',
         'menu_position' => 5,
-        'show_in_menu' => true,
-        'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
+        'supports' => ['title', 'editor', 'thumbnail'],
         'rewrite' => ['slug' => 'betternotes'],
         'has_archive' => true,
     ];
 
     register_post_type('notes', $args);
 }
-
 add_action('init', 'betternotes_register_cpt');
 
 
@@ -47,5 +44,25 @@ register_activation_hook(__FILE__, function () {
 
 register_deactivation_hook(__FILE__, function () {
 
+
     flush_rewrite_rules();
 });
+
+
+register_uninstall_hook(__FILE__, 'betternotes_uninstall');
+
+function betternotes_uninstall() {}
+
+
+function betternotes_enqueue_assets()
+{
+
+    $plugin_url = plugins_url('/', __FILE__) . 'BETTERNOTES/';
+
+
+    wp_enqueue_style('betternotes-style', $plugin_url . 'assets/css/style.css', [], '1.0', 'all');
+
+
+    wp_enqueue_script('betternotes-script', $plugin_url . 'assets/js/script.js', ['jquery'], '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'betternotes_enqueue_assets');

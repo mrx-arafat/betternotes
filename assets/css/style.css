@@ -1,0 +1,126 @@
+/* BETTERNOTES/assets/css/style.css */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c3e50;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Notes Archive Page */
+.archive.notes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.archive.notes .page-header {
+  margin-bottom: 20px;
+}
+
+.archive.notes .page-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Single Note Page */
+.single.notes {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.single.notes .entry-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.single.notes .entry-content {
+  line-height: 1.6;
+}
+
+.single.notes .entry-content p {
+  margin-bottom: 15px;
+}
+
+.single.notes .entry-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Notes List */
+.notes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.notes-list li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.notes-list li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.notes-list li a:hover {
+  background-color: #bd4848;
+}
+
+/* Featured Image */
+.notes .post-thumbnail {
+  margin-bottom: 10px;
+}
+
+.notes .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #2980b9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.pagination a:hover {
+  background-color: #2c3e50;
+}
