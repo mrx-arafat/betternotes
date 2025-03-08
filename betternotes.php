@@ -57,7 +57,7 @@ function betternotes_uninstall() {}
 function betternotes_enqueue_assets()
 {
 
-    $plugin_url = plugins_url('/', __FILE__) . 'BETTERNOTES/';
+    $plugin_url = plugins_url('/', __FILE__);
 
 
     wp_enqueue_style('betternotes-style', $plugin_url . 'assets/css/style.css', [], '1.0', 'all');
